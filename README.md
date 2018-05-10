@@ -34,7 +34,7 @@ This is a typical maven project. Download the source as a zip file or checkout t
 
 ## License
 
-This project is licensed under the Apache License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details
 
 ## Request
 You are free to fork this repository, but please drop me a note at sunitkatkar@gmail.com
