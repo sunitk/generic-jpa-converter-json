@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Generic JPA converter for JSON</title>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<h2>Generic JPA converter for JSON</h2>
+	<h4>
+		Refer my blog <a href="https://sunitkatkar.blogspot.com/2018/04/spring-boot-2-generic-jpa-converter-to.html"
+			target="_blank">here</a> for details
+	</h4>
+	<h3>List of current students</h3>
+	<br />
+	<table border="1" cellpadding="2" cellspacing="2">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Course Enrolled</th>
+				<th>Course JSON</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="std: ${students}">
+				<td th:text="${std.firstName}"></td>
+				<td th:text="${std.lastName}"></td>
+				<td>
+					Id:<span th:text="${std.course.id}"></span><br/>
+					Title:<span th:text="${std.course.title}"></span><br/>
+					Description:<span th:text="${std.course.description}"></span><br/>
+					Start Date:<span th:text="${std.course.startDate}"></span><br/>
+					End Date:<span th:text="${std.course.endDate}"></span><br/>
+				</td>
+				<td><pre th:text="${std.json}" class="prettyprint"></pre> </td>
+			</tr>
+		</tbody>
+	</table>
+	<hr />
+	<h3>Create a student</h3>
+	<form th:object="${student}" th:action="@{/create}" method="post">
+		<table border="1" cellpadding="4" cellspacing="4">
+			<tr>
+				<td>First name:</td>
+				<td><input type="text" th:field="*{firstName}"></td>
+			</tr>
+			<tr>
+				<td>Last name:</td>
+				<td><input type="text" th:field="*{lastName}"></td>
+			</tr>
+			<tr>
+				<td colspan="2" bgcolor="#cecece"><b>Course Details</b></td>
+			</tr>
+			<tr>
+				<td>Id:</td>
+				<td><input type="number" th:field="${student.course.id}"></td>
+			</tr>
+			<tr>
+				<td>Title:</td>
+				<td><input type="text" th:field="${student.course.title}"></td>
+			</tr>
+			<tr>
+				<td>Description:</td>
+				<td><input type="text" th:field="${student.course.description}"></td>
+			</tr>
+			<tr>
+				<td>Start Date:</td>
+				<td><input type="date" th:field="${student.course.startDate}"></td>
+			</tr>
+			<tr>
+				<td>End Date:</td>
+				<td><input type="date" th:field="${student.course.endDate}"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right"><button type="submit">Create</button></td>
+			</tr>
+		</table>
+	</form>
+	<br/>
+	<p><a href="https://sunitkatkar.blogspot.com/">Sunit Katkar's blog</a></p>
+	<br/>
+</body>
+</html>
