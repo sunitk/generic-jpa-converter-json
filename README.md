@@ -7,8 +7,7 @@ should be created which results in a separate table and a reference to it should
 a OneToOne or ManyToOne or OneToMany type of relationship. But there are special business conditions 
 where creating a separate entity is not feasible. So, storing this entity as a JSON string is a good solution.
 
-This repository contains code which accompanies the blog post [Spring Boot 2 generic JPA converter to serialize and deserialize an entity attribute as JSON]
-(https://sunitkatkar.blogspot.com/2018/05/spring-boot-2-generic-jpa-converter-to.html)
+This repository contains code which accompanies the blog post [Spring Boot 2 generic JPA converter to serialize and deserialize an entity attribute as JSON](https://sunitkatkar.blogspot.com/2018/05/spring-boot-2-generic-jpa-converter-to.html)
 
 ## Getting Started
 
